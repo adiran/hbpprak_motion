@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<ns2:bibi xmlns:ns2="http://schemas.humanbrainproject.eu/SP10/2014/BIBI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ns2:brainModel>
+<ns2:file>hbpprak_motion/hbpprak_motion_brain.py</ns2:file>
+</ns2:brainModel>
+<ns2:bodyModel>hbpprak_motion/arm_robot.sdf</ns2:bodyModel>
+<ns2:transferFunction xsi:type="ns2:PythonTransferFunction">
+#
+# This specifies that the neurons 0 to 2 of the circuit population
+# should be monitored. You can see them in the spike train widget
+@nrp.NeuronMonitor(nrp.brain.output_neurons, nrp.spike_recorder)
+def all_neurons_spike_monitor(t):
+# Uncomment to log into the 'log-console' visible in the simulation
+# clientLogger.info('Time: ', t)
+    return True
+#
+</ns2:transferFunction>
+<ns2:transferFunction xsi:type="ns2:PythonTransferFunction" src="train.py"/>
+<ns2:transferFunction xsi:type="ns2:PythonTransferFunction" src="input.py"/>
+<ns2:transferFunction xsi:type="ns2:PythonTransferFunction" src="swing.py"/>
+</ns2:bibi>

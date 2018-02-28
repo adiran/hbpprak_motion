@@ -1,0 +1,591 @@
+<sdf version='1.5'>
+  <model name='HoLLiE'>
+    <pose>0 0 0 0 0 0</pose>
+
+    <!-- base_link -->
+    <link name='base_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1000</mass>
+        <inertia>
+          <ixx>100</ixx>
+          <ixy>0</ixy>
+          <ixz>1</ixz>
+          <iyy>100</iyy>
+          <iyz>1</iyz>
+          <izz>100</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0.5 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/collisions/COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_Table_0_0_0_0_0_0_0.000.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_collision_base_link_1'>
+        <pose>0 0 0.5 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/collisions/COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_Table_0_0_0_0_0_0_0.001.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_collision_base_link_2'>
+        <pose>0 0 0.5 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/collisions/COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_Table_0_0_0_0_0_0_0_0_0.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0.5 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/meshes/VIS_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_Table_0_0_0_0_0_0_0_0_0.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- arm_0 -->
+    <link name='hollie_real_left_arm_0_joint_link'>
+      <pose>0 -0.4 1 0 0 1.62316</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.29364</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='hollie_real_left_arm_0_joint' type='prismatic'>
+      <child>hollie_real_left_arm_0_joint_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>-0.0523359 0.99863 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <!-- arm_1 -->
+    <link name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.000'>
+      <pose>0 -0.4 1.11 0 0 1.62316</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.29364</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.000_collision'>
+        <pose>3.51042e-08 9.9303e-08 1.19209e-06 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/collisions/COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.000.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.000_visual'>
+        <pose>3.51042e-08 9.9303e-08 1.19209e-06 -2.10125e-07 1.15808e-08 -1.56462e-07</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/meshes/VIS_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.000.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hollie_real_left_arm_1_joint' type='revolute'>
+      <child>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.000</child>
+      <parent>hollie_real_left_arm_0_joint_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.37255e+20</lower>
+          <upper>1.37255e+20</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <!-- arm_2 -->
+    <link name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.001'>
+      <pose>0 -0.4 1.11 1.5708 0 1.62316</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1.68311</mass>
+        <inertia>
+          <ixx>0.03</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.03</iyy>
+          <iyz>0</iyz>
+          <izz>0.03</izz>
+        </inertia>
+      </inertial>
+      <collision name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.001_collision'>
+        <pose>-2.54185e-08 1.432e-06 -4.74719e-09 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/collisions/COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.001.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.001_visual'>
+        <pose>-2.54185e-08 1.432e-06 -4.74719e-09 -7.54979e-08 4.84288e-08 5.42987e-08</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/meshes/VIS_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.001.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hollie_real_left_arm_2_joint' type='revolute'>
+      <child>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.001</child>
+      <parent>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.000</parent><inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1000</mass>
+        <inertia>
+          <ixx>100</ixx>
+          <ixy>0</ixy>
+          <ixz>1</ixz>
+          <iyy>100</iyy>
+          <iyz>1</iyz>
+          <izz>100</izz>
+        </inertia>
+      </inertial>
+      <axis>
+        <xyz>0.99863 0.0523359 -4.37114e-08</xyz>
+        <limit>
+          <lower>-2864.79</lower>
+          <upper>2864.79</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <!-- arm_3 -->
+    <link name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.002'>
+      <pose>1.5278e-08 -0.4 1.46 1.5708 6.77236e-15 -1.51844</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>2.1</mass>
+        <inertia>
+          <ixx>0.03</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.03</iyy>
+          <iyz>0</iyz>
+          <izz>0.03</izz>
+        </inertia>
+      </inertial>
+      <collision name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.002_collision'>
+        <pose>-1.55538e-07 9.55162e-07 1.14359e-08 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/collisions/COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.002.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.002_visual'>
+        <pose>-1.55538e-07 9.55162e-07 1.14359e-08 4.37113e-08 4.09782e-07 -1.73467e-07</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/meshes/VIS_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.002.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hollie_real_left_arm_3_joint' type='revolute'>
+      <child>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.002</child>
+      <parent>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.001</parent>
+      <axis>
+        <xyz>-0.99863 -0.0523361 4.37114e-08</xyz>
+        <limit>
+          <lower>-1.36749e+20</lower>
+          <upper>1.36749e+20</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <!-- arm_4 -->
+    <link name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.003'>
+      <pose>1.5278e-08 -0.4 1.46 8.74228e-08 -1.50996e-07 1.62316</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1.68311</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0.1</ixy>
+          <ixz>0.1</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0.1</iyz>
+          <izz>0.1</izz>
+        </inertia>
+      </inertial>
+      <collision name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.003_collision'>
+        <pose>5.1084e-08 -1.46347e-07 1.74725e-07 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/collisions/COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.003.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.003_visual'>
+        <pose>5.1084e-08 -1.46347e-07 1.74725e-07 1.54785e-07 3.0945e-09 -2.12342e-07</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/meshes/VIS_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.003.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hollie_real_left_arm_4_joint' type='revolute'>
+      <child>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.003</child>
+      <parent>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.002</parent>
+      <axis>
+        <xyz>9.52055e-08 -1.46214e-07 1</xyz>
+        <limit>
+          <lower>-4.52188e+19</lower>
+          <upper>4.52188e+19</upper>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <!-- arm_5 -->
+    <link name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.004'>
+      <pose>-0.00525574 -0.400275 1.765 1.5708 1.50996e-07 -1.51844</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.807</mass>
+        <inertia>
+          <ixx>0.03</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.03</iyy>
+          <iyz>0</iyz>
+          <izz>0.03</izz>
+        </inertia>
+      </inertial>
+      <collision name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.004_collision'>
+        <pose>-1.87833e-07 6.52579e-07 -6.23986e-08 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/collisions/COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.004.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.004_visual'>
+        <pose>-1.87833e-07 6.52579e-07 -6.23986e-08 1.47422e-06 -1.69501e-06 -1.44053e-07</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/meshes/VIS_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.004.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hollie_real_left_arm_5_joint' type='revolute'>
+      <child>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.004</child>
+      <parent>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.003</parent>
+      <axis>
+        <xyz>-0.99863 -0.0523362 4.37114e-08</xyz>
+        <limit>
+          <lower>-1.36749e+20</lower>
+          <upper>1.36749e+20</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <!-- arm_6 -->
+    <link name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.005'>
+      <pose>-0.00525574 -0.400275 1.765 -8.74228e-08 1.50996e-07 -1.51844</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.819</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.005_collision'>
+        <pose>-4.52224e-08 3.3062e-07 1.35905e-06 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/collisions/COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.005.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.005_visual'>
+        <pose>-4.52224e-08 3.3062e-07 1.35905e-06 1.28805e-07 -3.81088e-11 4.54485e-07</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/meshes/VIS_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.005.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hollie_real_left_arm_6_joint' type='revolute'>
+      <child>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.005</child>
+      <parent>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.004</parent>
+      <axis>
+        <xyz>9.52055e-08 -1.46214e-07 1</xyz>
+        <limit>
+          <lower>-4.52188e+19</lower>
+          <upper>4.52188e+19</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <!-- hand_base -->
+    <link name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.006'>
+      <pose>-0.00525573 -0.400276 1.865 -8.74228e-08 1.50996e-07 -1.51844</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.006_collision'>
+        <pose>-1.68576e-07 9.89996e-07 -0.0319981 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/collisions/COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.006.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.006_visual'>
+        <pose>-1.68576e-07 9.89996e-07 -0.0319981 -5.19103e-08 -7.89563e-10 2.16067e-07</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/meshes/VIS_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.006.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hollie_real_left_hand_base_joint' type='prismatic'>
+      <child>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.006</child>
+      <parent>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.005</parent>
+      <axis>
+        <xyz>0.0523362 -0.99863 -1.50996e-07</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+	  	<!-- Racket --> 
+    <link name='tennis_racket'>
+      <pose>-0.0183677 -0.400963 2.365 1.57079632679 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='tennis_racket.collision'>
+        <pose>-6.60936e-08 0.0131302 2.0743e-06 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/meshes/tennis_racket_3d.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tennis_racket.visual'>
+        <pose>-6.60936e-08 0.0131302 2.0743e-06 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://arm_robot/meshes/tennis_racket_3d.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hollie_tennis_racket_joint' type='prismatic'>
+      <child>tennis_racket</child>
+      <parent>COL_COL_COL_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_VIS_hollie_real.006</parent>
+      <axis>
+        <xyz>0.0523362 -0.99863 -1.50996e-07</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+	  
+	  
+    <static>0</static>
+    <plugin name='generic_controller' filename='libgeneric_controller_plugin.so'>
+      <controller joint_name='hollie_real_base_x_joint'>
+        <type>position</type>
+        <pid>500.0 10.0 50.0</pid>
+      </controller>
+      <controller joint_name='hollie_real_left_arm_0_joint'>
+        <type>position</type>
+        <pid>500.0 10.0 50.0</pid>
+      </controller>
+      <controller joint_name='hollie_real_left_arm_1_joint'>
+        <type>position</type>
+        <pid>500.0 10.0 50.0</pid>
+      </controller>
+      <controller joint_name='hollie_real_left_arm_2_joint'>
+        <type>position</type>
+        <pid>500.0 10.0 50.0</pid>
+      </controller>
+      <controller joint_name='hollie_real_left_arm_3_joint'>
+        <type>position</type>
+        <pid>500.0 10.0 50.0</pid>
+      </controller>
+      <controller joint_name='hollie_real_left_arm_4_joint'>
+        <type>position</type>
+        <pid>500.0 100.0 50.0</pid>
+      </controller>
+      <controller joint_name='hollie_real_left_arm_5_joint'>
+        <type>position</type>
+        <pid>500.0 10.0 50.0</pid>
+      </controller>
+      <controller joint_name='hollie_real_left_arm_6_joint'>
+        <type>position</type>
+        <pid>500.0 10.0 50.0</pid>
+      </controller>
+      <controller joint_name='hollie_real_left_hand_base_joint'>
+        <type>position</type>
+        <pid>100.0 0.1 0.1</pid>
+      </controller>
+	  <controller joint_name='hollie_tennis_racket_joint'>
+        <type>position</type>
+        <pid>100.0 0.1 0.1</pid>
+      </controller>
+    </plugin>
+  </model>
+</sdf>

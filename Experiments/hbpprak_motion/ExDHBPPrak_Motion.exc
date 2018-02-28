@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns2:ExD xmlns:ns2="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ns2:name>AAA - Motion Comittee Testing Experiment Test</ns2:name>
+<ns2:thumbnail>ExDTemplateManipulation.jpg</ns2:thumbnail>
+<ns2:description>Hit a ball as far as possible with a tennis racket</ns2:description>
+<ns2:tags>hollie robotics</ns2:tags>
+<ns2:timeout>1800000.0</ns2:timeout>
+<ns2:configuration src="ExDTemplateManipulation.3ds" type="3d-settings"/>
+<ns2:maturity>production</ns2:maturity>
+<ns2:environmentModel src="hbpprak_motion/world.sdf">
+<ns2:robotPose theta="0.0" ux="0.0" uy="0.0" uz="1.0" x="0.0" y="0.0" z="0.04"/>
+</ns2:environmentModel>
+<ns2:bibiConf src="bibi_configuration.bibi"/>
+<ns2:experimentControl>
+<ns2:stateMachine id="throw_ball" src="throw_ball.exd" xsi:type="ns2:SMACHStateMachine"/>
+</ns2:experimentControl>
+<ns2:cameraPose>
+<ns2:cameraPosition x="8.5" y="0.0" z="1.8"/>
+<ns2:cameraLookAt x="0.0" y="0.0" z="0.6"/>
+</ns2:cameraPose>
+</ns2:ExD>
